@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Dashboard - Salon Queue</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h1>Customer Dashboard</h1>
+    <div>
+      <span id="welcomeUser"></span>
+      <button id="logoutBtn" style="margin-left: 15px;">Logout</button>
+    </div>
+  </div>
+
+  <!-- Customer Info Section -->
+  <section id="customerInfo">
+    <h3>Welcome back!</h3>
+    <p id="userDetails"></p>
+  </section>
+
+  <!-- Current Queue Status -->
+  <section>
+    <h2>Your Current Queue Status</h2>
+    <div id="queueStatusContainer">
+      <p id="currentQueueStatus">You are not in any queue.</p>
+      <div id="positionInfo" style="display: none;">
+        <h3 style="color: #007bff;">Your Position: <span id="queuePosition">-</span></h3>
+        <p><strong>Salon:</strong> <span id="salonName">-</span></p>
+        <p id="estimatedWait"></p>
+        <button id="leaveQueueBtn" style="background: #dc3545;">Leave Queue</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Queue Section -->
+  <section id="joinQueueSection">
+    <h2>Join a Queue</h2>
+    <form id="queueForm">
+      <label for="salon">Select Salon:</label>
+      <select id="salon" name="salon" required>
+        <option value="">Loading salons...</option>
+      </select>
+
+      <label for="service">Select Service:</label>
+      <select id="service" name="service">
+        <option value="Haircut">Haircut</option>
+        <option value="Shave">Shave</option>
+        <option value="Hair Color">Hair Color</option>
+        <option value="Beard Trim">Beard Trim</option>
+        <option value="Facial">Facial</option>
+      </select>
+
+      <button type="submit">Join Queue</button>
+    </form>
+  </section>
+
+  <!-- Queue History -->
+  <section>
+    <h2>Your Queue History</h2>
+    <ul id="historyList">
+      <li>No history yet.</li>
+    </ul>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
